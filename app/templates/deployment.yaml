@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: {{ .Values.pproapp.name }}
+  namespace: {{ .Values.pproapp.namespace }}
+  labels:
+    app: {{ .Values.pproapp.name }}
+    group: {{ .Values.pproapp.group }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.pproapp.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.pproapp.name }}
+        group: {{ .Values.pproapp.group }}
+    spec:
+      containers:
+        - name: {{ .Values.pproapp.name }}
+          image: {{ .Values.pproapp.container.image }}
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: {{ .Values.pproapp.container.port }}

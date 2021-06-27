@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Values.pprodb.config.name }}
+  namespace: {{ .Values.pprodb.namespace }}
+  labels:
+    group: {{ .Values.pprodb.group }}
+data: 
+{{- range .Values.pprodb.config.data }}
+  {{ .key }}: {{ .value }}
+{{- end}}

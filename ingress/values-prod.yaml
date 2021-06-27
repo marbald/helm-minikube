@@ -1,0 +1,16 @@
+ingress:
+  name: ingress
+  replicaCount: 1
+  namespace: prod
+  annotations:
+    class: nginx
+  hosts:
+    - host: app.k8s.ppro-prod-local.com
+      paths:
+        - path: /app
+          pathType: Prefix
+          backend:
+            service:
+              name: pproapp
+              port: 
+                number: 3000

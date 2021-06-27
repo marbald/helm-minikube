@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: {{ .Values.pprodb.name }}
+  namespace: {{ .Values.pprodb.namespace }}
+  labels: 
+    group: {{ .Values.pprodb.group }}
+spec:
+  type: {{ .Values.pprodb.service.type }}
+  selector:
+    app: {{ .Values.pprodb.name }}
+  ports:
+    - port: {{ .Values.pprodb.service.port }}       
+      targetPort: {{ .Values.pprodb.container.port }}

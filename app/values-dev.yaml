@@ -1,0 +1,18 @@
+replicaCount: 1
+
+pproapp:
+  name: pproapp
+  group: app
+  namespace: dev
+  container:
+    image: ppro/app-dev
+    port: 3000
+  service:
+    type: ClusterIP
+    port: 3000
+  config:
+    name: pproapp-config
+    data:
+       - key: key
+         value: value
+

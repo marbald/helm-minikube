@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Values.pproapp.config.name }}
+  namespace: {{ .Values.pproapp.namespace }}
+  labels:
+    group: {{ .Values.pproapp.group }}
+data: 
+{{- range .Values.pproapp.config.data }}
+  {{ .key }}: {{ .value }}
+{{- end}}

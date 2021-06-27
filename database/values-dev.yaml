@@ -1,0 +1,17 @@
+replicaCount: 1
+
+pprodb:
+  name: pprodb
+  group: db
+  namespace: dev
+  container:
+    image: ppro/postgres-dev
+    port: 5432
+  service:
+    type: ClusterIP
+    port: 5432
+  config:
+    name: pprodb-config
+    data:
+       - key: key
+         value: value

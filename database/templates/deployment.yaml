@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: {{ .Values.pprodb.name }}
+  namespace: {{ .Values.pprodb.namespace }}
+  labels:
+    app: {{ .Values.pprodb.name }}
+    group: {{ .Values.pprodb.group }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.pprodb.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.pprodb.name }}
+        group: {{ .Values.pprodb.group }}
+    spec:
+      containers:
+        - name: {{ .Values.pprodb.name }}
+          image: {{ .Values.pprodb.container.image }}
+          imagePullPolicy: Never
+          ports:
+            - containerPort: {{ .Values.pprodb.container.port }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Values.pprodb.config.name }}
+          env:
+            {{- range .Values.pprodb.env}}
+            - name: {{ .key}}
+              value: {{ .value}}
+            {{- end}}

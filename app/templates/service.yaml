@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: {{ .Values.pproapp.name }}
+  namespace: {{ .Values.pproapp.namespace }}
+  labels: 
+    group: {{ .Values.pproapp.group }}
+spec:
+  type: {{ .Values.pproapp.service.type }}
+  selector:
+    app: {{ .Values.pproapp.name }}
+  ports:
+    - port: {{ .Values.pproapp.service.port }}
+      targetPort: {{ .Values.pproapp.container.port }}
+      name: http

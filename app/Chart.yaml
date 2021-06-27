@@ -1,0 +1,15 @@
+apiVersion: v2
+name: pproapp
+
+description: Helm chart for a Node.js application
+type: application
+version: 0.1.0
+appVersion: 1.16.0
+
+keywords:
+  - nodejs
+  - pproapp
+home: https://github.com/marbald/helm-minikube
+maintainers:
+  - name: Marco Baldelli
+    url: https://github.com/wkrzywiec
