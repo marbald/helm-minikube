@@ -1,5 +1,13 @@
 # Helm / Minikube project
 
+## Table of Contents  
+- [Overview](#https://github.com/marbald/helm-minikube#overview)
+- [Install & configure](#https://github.com/marbald/helm-minikube#install--configure)
+- [Prepare](https://github.com/marbald/helm-minikube#prepare)
+- [Run](https://github.com/marbald/helm-minikube#run)
+- [Cleanup](https://github.com/marbald/helm-minikube#cleanup)
+
+## Overview
 This repository allows to spin up a multi-environment (prod / dev) minikube cluster. The applications deployed can be accessed from the browser and will return a customized Hello World string depending on the URL used.
 
 The URLs configured in our code that we're going to use in our browser are
@@ -16,6 +24,11 @@ Beside a valid git installation, the software required needed to run the app on 
 ### Implementation
 
 For details about the content of this repository, please take a look at the README.md files in each sub-directory of the main folder.
+
+- [/app](https://github.com/marbald/helm-minikube/tree/master/app)
+- [/database](https://github.com/marbald/helm-minikube/tree/master/database)
+- [/docker](https://github.com/marbald/helm-minikube/tree/master/docker)
+- [/ingress](https://github.com/marbald/helm-minikube/tree/master/ingress)
 
 ## Install & configure
 
