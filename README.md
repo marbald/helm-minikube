@@ -183,6 +183,20 @@ Hello World from 'dev' environment!
 
 ## Cleanup
 
-The main folder also contains a cleanup script to stop / uninstall the existing Helm resources on the local minikube instance. The script looks for a bash parameter and, if not provided 
+The main folder also contains a cleanup script to stop / uninstall the existing Helm resources on the local minikube instance. The script looks for a bash parameter (`$1`) and, if not provided, halts all resources in both namespaces, `prod` and `dev`.
 
-By default, the `./build-install.sh` script runs a `./cleanup ${env}` as soon as the `prod` or `dev` environment is provided as target.
+The execution looks like this
+
+```bash
+> ./cleanup.sh 
+
+	- Helm 'prod' environment is being cleaned up...
+	- Helm 'prod' environment has been cleaned up!
+
+
+	- Helm 'dev' environment is being cleaned up...
+	- Helm 'dev' environment has been cleaned up!
+
+```
+
+By default, the `./build-install.sh` script runs a `./cleanup ${env}` right after `prod` or `dev` environment is provided via input.

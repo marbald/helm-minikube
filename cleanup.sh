@@ -18,6 +18,6 @@ do
 	helm uninstall --namespace=$env pprodb-$env &>/dev/null
 	helm uninstall --namespace=$env pproapp-$env &>/dev/null
 	
-	echo "	- Helm '$env' environment has been cleaned up..."
+	echo "	- Helm '$env' environment has been cleaned up!"
 	echo ""
 done
