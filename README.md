@@ -1,8 +1,8 @@
 # Helm / Minikube project
 
 ## Table of Contents  
-- [Overview](#https://github.com/marbald/helm-minikube#overview)
-- [Install & configure](#https://github.com/marbald/helm-minikube#install--configure)
+- [Overview](https://github.com/marbald/helm-minikube#overview)
+- [Install & configure](https://github.com/marbald/helm-minikube#install--configure)
 - [Prepare](https://github.com/marbald/helm-minikube#prepare)
 - [Run](https://github.com/marbald/helm-minikube#run)
 - [Cleanup](https://github.com/marbald/helm-minikube#cleanup)
@@ -80,7 +80,7 @@ Now we need to start our cluster and then install our ingress addon
 
 The `--vm-true` parameter is needed only if you are installing this on a Mackbook, [check this link](https://github.com/kubernetes/minikube/issues/7332) for further info.
 
-Once your cluster is started, we need to install our ingress addon
+Once your cluster is started, we need to install our ingress addon, we are going to need this in order to add an NGINX ingress to gain access from a browser
 
 ```bash
 > minikube addons enable ingress

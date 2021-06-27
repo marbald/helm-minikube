@@ -27,7 +27,7 @@ read PG_DB
 echo && echo "Enter the database user:";
 read PG_USER
 
-echo && echo "Enter the database password:";
+echo && echo "Enter the database password for the user '${PG_USER}':";
 read -s PG_PASS
 
 
